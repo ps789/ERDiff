@@ -42,7 +42,6 @@ with open('datasets/Neural_Source.pkl', 'rb') as f:
 with open('datasets/Neural_Target.pkl', 'rb') as f:
     test_data = pickle.load(f)['data']
 
-
 train_trial_spikes1, train_trial_vel1, train_trial_dir1 = train_data1['firing_rates'], train_data1['velocity'], train_data1['labels']
 
 test_trial_spikes, test_trial_vel, test_trial_dir = test_data['firing_rates'], test_data['velocity'], np.squeeze(test_data['labels'])
@@ -72,6 +71,7 @@ train_trial_vel_tide = train_trial_vel_tide1
 train_trial_dic_tide = np.squeeze(np.vstack([array_train_trial_dir1]))
 test_trial_dic_tide = np.squeeze(np.vstack([test_trial_dir]))
 
+
 kern_sd_ms = 100
 kern_sd = int(round(kern_sd_ms / bin_width))
 window = signal.gaussian(kern_sd, kern_sd, sym=True)
@@ -89,8 +89,6 @@ train_len = round(len(indices) * 0.8)
 real_train_trial_spikes_smed, val_trial_spikes_smed = train_trial_spikes_smoothed[indices[:train_len]], train_trial_spikes_smoothed[indices[train_len:]]
 real_train_trial_vel_tide, val_trial_vel_tide = train_trial_vel_tide[indices[:train_len]], train_trial_vel_tide[indices[train_len:]]
 real_train_trial_dic_tide, val_trial_dic_tide = train_trial_dic_tide[indices[:train_len]], train_trial_dic_tide[indices[train_len:]]
-
-
 n_steps = 1
 n_epochs = 500
 batch_size = 64
@@ -122,8 +120,8 @@ input_dim = 1
 
 
 diff_model = diff_STBlock(input_dim)
-
-diff_model_dict = torch.load('model_checkpoints/source_diffusion_model')
+conditional = True
+diff_model_dict = torch.load('model_checkpoints/source_diffusion_model_conditional' if conditional else 'model_checkpoints/source_diffusion_model')
 diff_model.load_state_dict(diff_model_dict)
 
 for k,v in diff_model.named_parameters():
@@ -140,7 +138,7 @@ def setup_seed(seed):
      torch.backends.cudnn.deterministic = True
 setup_seed(21)
 
-vanilla_model_dict = torch.load('model_checkpoints/source_vae_model')
+vanilla_model_dict = torch.load('model_checkpoints/source_vae_model_conditional' if conditional else 'model_checkpoints/source_vae_model')
 
 MLA_model = VAE_MLA_Model()
 MLA_dict_keys = MLA_model.state_dict().keys()
@@ -197,7 +195,7 @@ test_trial_spikes_stand_half_len = len(test_trial_spikes_stand) // 2
 
 spike_day_0 = Variable(torch.from_numpy(real_train_trial_spikes_stand)).float()
 spike_day_k = Variable(torch.from_numpy(test_trial_spikes_stand[:test_trial_spikes_stand_half_len])).float()
-
+labels = Variable(torch.Tensor([test_trial_dic_tide[i][0][0] for i in range(len(test_trial_dic_tide)//2)]))
 
 num_x, num_y, num_y_test = spike_day_0.shape[0], spike_day_k.shape[0], test_trial_spikes_stand.shape[0]
 
@@ -215,23 +213,19 @@ def logger_performance(model):
 # Maximum Likelihood Alignment
 
 for epoch in range(epoches):
-
     optimizer.zero_grad()
-
     re_sp, _, distri_0, distri_k, latents_k, output_sh_loss, log_var = MLA_model(spike_day_0, spike_day_k, p, q, train_flag=True) 
-
     total_loss = output_sh_loss
 
     latents_k = latents_k[:, None, :, :]
     latents_k = torch.transpose(latents_k,3,2)
-
     batch_size = latents_k.shape[0]
     t = torch.randint(0, timesteps, (batch_size,), device=device).long()
     noise = torch.randn_like(latents_k)
 
 
     z_noisy = q_sample(x_start=latents_k, t=t, noise=noise)
-    predicted_noise = diff_model(z_noisy, t)
+    predicted_noise = diff_model(z_noisy, t, labels.long())
     total_loss += appro_alpha * F.smooth_l1_loss(noise, predicted_noise)
     
     total_loss += skilling_divergence(z_noisy,latents_k,t)
@@ -248,11 +242,11 @@ for epoch in range(epoches):
             if current_metric > key_metric:
                 key_metric = current_metric
             if total_loss < pre_total_loss_:
-                torch.save(MLA_model.state_dict(),'model_checkpoints/vae_model_mla')
+                torch.save(MLA_model.state_dict(),'model_checkpoints/vae_model_mla_conditional' if conditional else 'model_checkpoints/vae_model_mla')
                 pre_total_loss_ = total_loss 
                 
 
-vanilla_model_dict = torch.load('model_checkpoints/vae_model_mla')
+vanilla_model_dict = torch.load('model_checkpoints/vae_model_mla_conditional' if conditional else 'model_checkpoints/vae_model_mla')
 
 MLA_model = VAE_MLA_Model()
 
@@ -261,7 +255,7 @@ MLA_model.load_state_dict(vanilla_model_dict)
 with torch.no_grad():
     _, _, _, _, test_latents, _,_ = MLA_model(spike_train, spike_test,p,q_test, train_flag = False)
 test_latents = np.array(test_latents)
-np.save("./npy_files/test_latents.npy",test_latents)
+np.save("./npy_files/test_latents_conditional.npy" if conditional else "./npy_files/test_latents.npy",test_latents)
     
 
 def create_dir_dict(trial_dir):
@@ -279,7 +273,7 @@ train_dir_dict, test_dir_dict = create_dir_dict(real_train_trial_dic_tide), crea
 val_dir_dict = create_dir_dict(val_trial_dic_tide)
 
 
-vanilla_model_dict = torch.load('model_checkpoints/vae_model_mla')
+vanilla_model_dict = torch.load('model_checkpoints/vae_model_mla_conditional' if conditional else 'model_checkpoints/vae_model_mla')
 
 VAE_Readout_model = VAE_Readout_Model()
 DL_dict_keys = VAE_Readout_model.state_dict().keys()

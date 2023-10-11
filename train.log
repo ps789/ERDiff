@@ -1,0 +1,644 @@
+2023-09-27 10:26:14,654 - train_logger - INFO - python logging test
+2023-09-27 14:43:55,858 - train_logger - INFO - python logging test
+2023-09-28 10:41:20,533 - train_logger - INFO - python logging test
+2023-09-28 10:43:05,319 - train_logger - INFO - python logging test
+2023-09-28 10:44:01,029 - train_logger - INFO - python logging test
+2023-09-28 10:45:31,522 - train_logger - INFO - python logging test
+2023-09-28 10:47:22,613 - train_logger - INFO - python logging test
+2023-09-28 10:48:25,035 - train_logger - INFO - python logging test
+2023-09-28 10:49:06,881 - train_logger - INFO - python logging test
+2023-09-28 10:49:26,367 - train_logger - INFO - python logging test
+2023-09-28 10:51:08,891 - train_logger - INFO - python logging test
+2023-09-28 10:52:00,747 - train_logger - INFO - python logging test
+2023-09-28 10:52:21,419 - train_logger - INFO - python logging test
+2023-09-28 10:52:39,231 - train_logger - INFO - python logging test
+2023-09-28 10:53:38,072 - train_logger - INFO - python logging test
+2023-09-28 10:54:04,060 - train_logger - INFO - python logging test
+2023-09-28 10:56:04,999 - train_logger - INFO - python logging test
+2023-09-28 10:56:20,401 - train_logger - INFO - python logging test
+2023-09-28 10:56:46,403 - train_logger - INFO - python logging test
+2023-09-28 10:57:35,155 - train_logger - INFO - python logging test
+2023-09-28 10:57:46,918 - train_logger - INFO - python logging test
+2023-09-28 10:58:25,302 - train_logger - INFO - python logging test
+2023-09-28 10:59:54,080 - train_logger - INFO - python logging test
+2023-09-28 13:38:46,003 - train_logger - INFO - python logging test
+2023-09-28 13:39:18,050 - train_logger - INFO - python logging test
+2023-09-28 13:40:02,997 - train_logger - INFO - python logging test
+2023-09-28 13:40:46,674 - train_logger - INFO - python logging test
+2023-09-28 13:41:19,452 - train_logger - INFO - python logging test
+2023-09-28 13:42:03,534 - train_logger - INFO - python logging test
+2023-09-28 13:42:47,590 - train_logger - INFO - python logging test
+2023-09-28 13:43:04,258 - train_logger - INFO - python logging test
+2023-09-28 13:43:27,358 - train_logger - INFO - python logging test
+2023-09-28 13:44:18,025 - train_logger - INFO - python logging test
+2023-09-28 13:45:52,678 - train_logger - INFO - python logging test
+2023-09-28 13:47:47,784 - train_logger - INFO - python logging test
+2023-09-28 13:48:16,246 - train_logger - INFO - python logging test
+2023-09-28 13:48:31,523 - train_logger - INFO - python logging test
+2023-09-28 13:48:52,800 - train_logger - INFO - python logging test
+2023-09-28 13:54:14,264 - train_logger - INFO - python logging test
+2023-09-28 13:54:52,494 - train_logger - INFO - python logging test
+2023-09-28 14:28:18,679 - train_logger - INFO - python logging test
+2023-09-28 14:29:10,678 - train_logger - INFO - python logging test
+2023-09-28 14:29:19,224 - train_logger - INFO - python logging test
+2023-09-28 14:29:25,868 - train_logger - INFO - python logging test
+2023-09-28 14:29:57,901 - train_logger - INFO - python logging test
+2023-09-28 14:31:14,935 - train_logger - INFO - python logging test
+2023-09-28 14:43:28,446 - train_logger - INFO - python logging test
+2023-09-28 14:44:30,511 - train_logger - INFO - python logging test
+2023-09-28 14:45:43,972 - train_logger - INFO - python logging test
+2023-09-28 14:46:20,345 - train_logger - INFO - python logging test
+2023-09-28 14:46:39,186 - train_logger - INFO - python logging test
+2023-09-28 14:46:48,331 - train_logger - INFO - python logging test
+2023-09-28 14:49:50,627 - train_logger - INFO - python logging test
+2023-09-28 14:51:20,932 - train_logger - INFO - python logging test
+2023-09-28 14:51:23,112 - train_logger - INFO - Epoch:0
+2023-09-28 14:52:49,277 - train_logger - INFO - python logging test
+2023-09-28 14:52:51,479 - train_logger - INFO - Epoch:0
+2023-09-28 14:53:40,712 - train_logger - INFO - python logging test
+2023-09-28 14:53:42,918 - train_logger - INFO - Epoch:0
+2023-09-28 14:56:38,973 - train_logger - INFO - python logging test
+2023-09-28 14:56:41,201 - train_logger - INFO - Epoch:0
+2023-09-28 14:57:02,870 - train_logger - INFO - python logging test
+2023-09-28 14:57:05,032 - train_logger - INFO - Epoch:0
+2023-09-28 14:57:32,946 - train_logger - INFO - python logging test
+2023-09-28 14:57:35,058 - train_logger - INFO - Epoch:0
+2023-09-28 14:58:06,708 - train_logger - INFO - python logging test
+2023-09-28 14:58:08,880 - train_logger - INFO - Epoch:0
+2023-09-28 14:59:41,557 - train_logger - INFO - python logging test
+2023-09-28 14:59:43,172 - train_logger - INFO - Epoch:0
+2023-09-28 14:59:50,016 - train_logger - INFO - Epoch:5
+2023-09-28 15:01:24,847 - train_logger - INFO - python logging test
+2023-09-28 15:02:00,159 - train_logger - INFO - python logging test
+2023-09-28 15:02:02,380 - train_logger - INFO - Epoch:0
+2023-09-28 15:03:50,851 - train_logger - INFO - python logging test
+2023-09-28 15:04:00,706 - train_logger - INFO - python logging test
+2023-09-28 15:48:50,906 - train_logger - INFO - python logging test
+2023-09-28 15:48:52,651 - train_logger - INFO - Epoch:0
+2023-09-28 15:50:19,254 - train_logger - INFO - python logging test
+2023-09-28 15:50:47,805 - train_logger - INFO - python logging test
+2023-09-28 15:51:06,360 - train_logger - INFO - python logging test
+2023-09-28 15:51:08,118 - train_logger - INFO - Epoch:0
+2023-10-02 10:30:05,923 - train_logger - INFO - python logging test
+2023-10-02 10:30:07,820 - train_logger - INFO - Epoch:0
+2023-10-02 10:32:23,403 - train_logger - INFO - python logging test
+2023-10-02 10:32:25,224 - train_logger - INFO - Epoch:0
+2023-10-02 10:36:38,691 - train_logger - INFO - python logging test
+2023-10-02 10:58:57,837 - train_logger - INFO - python logging test
+2023-10-02 10:58:59,595 - train_logger - INFO - Epoch:0
+2023-10-02 10:59:48,643 - train_logger - INFO - python logging test
+2023-10-02 11:01:43,807 - train_logger - INFO - python logging test
+2023-10-02 11:02:06,886 - train_logger - INFO - python logging test
+2023-10-02 12:12:49,577 - train_logger - INFO - python logging test
+2023-10-02 12:12:51,512 - train_logger - INFO - Epoch:0
+2023-10-02 12:16:12,236 - train_logger - INFO - python logging test
+2023-10-02 12:16:14,228 - train_logger - INFO - Epoch:0
+2023-10-02 14:20:53,815 - train_logger - INFO - python logging test
+2023-10-02 14:21:37,042 - train_logger - INFO - python logging test
+2023-10-02 14:21:38,992 - train_logger - INFO - Epoch:0
+2023-10-02 14:21:43,180 - train_logger - INFO - python logging test
+2023-10-02 14:22:18,210 - train_logger - INFO - python logging test
+2023-10-02 14:22:20,204 - train_logger - INFO - Epoch:0
+2023-10-02 14:22:25,408 - train_logger - INFO - python logging test
+2023-10-02 14:23:00,771 - train_logger - INFO - python logging test
+2023-10-02 14:23:02,672 - train_logger - INFO - Epoch:0
+2023-10-02 14:23:10,556 - train_logger - INFO - python logging test
+2023-10-02 14:23:47,140 - train_logger - INFO - python logging test
+2023-10-02 14:23:49,008 - train_logger - INFO - Epoch:0
+2023-10-02 14:24:05,824 - train_logger - INFO - python logging test
+2023-10-02 14:24:39,935 - train_logger - INFO - python logging test
+2023-10-02 14:24:41,912 - train_logger - INFO - Epoch:0
+2023-10-02 14:25:34,511 - train_logger - INFO - python logging test
+2023-10-02 14:26:16,815 - train_logger - INFO - python logging test
+2023-10-02 14:26:18,731 - train_logger - INFO - Epoch:0
+2023-10-02 14:26:55,338 - train_logger - INFO - python logging test
+2023-10-02 14:27:29,354 - train_logger - INFO - python logging test
+2023-10-02 14:27:31,379 - train_logger - INFO - Epoch:0
+2023-10-03 14:12:51,066 - train_logger - INFO - python logging test
+2023-10-03 14:12:52,965 - train_logger - INFO - Epoch:0
+2023-10-03 14:13:01,308 - train_logger - INFO - Epoch:5
+2023-10-03 14:13:08,915 - train_logger - INFO - python logging test
+2023-10-03 14:13:10,700 - train_logger - INFO - Epoch:0
+2023-10-03 14:13:19,110 - train_logger - INFO - Epoch:5
+2023-10-03 14:13:27,600 - train_logger - INFO - Epoch:10
+2023-10-03 14:13:36,019 - train_logger - INFO - Epoch:15
+2023-10-03 14:13:44,391 - train_logger - INFO - Epoch:20
+2023-10-03 14:13:52,630 - train_logger - INFO - Epoch:25
+2023-10-03 14:14:01,198 - train_logger - INFO - Epoch:30
+2023-10-03 14:14:09,423 - train_logger - INFO - Epoch:35
+2023-10-03 14:14:17,728 - train_logger - INFO - Epoch:40
+2023-10-03 14:14:26,040 - train_logger - INFO - Epoch:45
+2023-10-03 14:14:34,398 - train_logger - INFO - Epoch:50
+2023-10-03 14:14:42,771 - train_logger - INFO - Epoch:55
+2023-10-03 14:14:51,106 - train_logger - INFO - Epoch:60
+2023-10-03 14:14:59,476 - train_logger - INFO - Epoch:65
+2023-10-03 14:15:07,990 - train_logger - INFO - Epoch:70
+2023-10-03 14:15:16,330 - train_logger - INFO - Epoch:75
+2023-10-03 14:15:24,770 - train_logger - INFO - Epoch:80
+2023-10-03 14:15:33,169 - train_logger - INFO - Epoch:85
+2023-10-03 14:15:41,555 - train_logger - INFO - Epoch:90
+2023-10-03 14:15:49,913 - train_logger - INFO - Epoch:95
+2023-10-03 14:15:58,918 - train_logger - INFO - Epoch:100
+2023-10-03 14:16:07,908 - train_logger - INFO - Epoch:105
+2023-10-03 14:16:16,507 - train_logger - INFO - Epoch:110
+2023-10-03 14:16:25,092 - train_logger - INFO - Epoch:115
+2023-10-03 14:16:33,440 - train_logger - INFO - Epoch:120
+2023-10-03 14:16:42,216 - train_logger - INFO - Epoch:125
+2023-10-03 14:16:51,279 - train_logger - INFO - Epoch:130
+2023-10-03 14:16:59,999 - train_logger - INFO - Epoch:135
+2023-10-03 14:17:08,384 - train_logger - INFO - Epoch:140
+2023-10-03 14:17:16,568 - train_logger - INFO - Epoch:145
+2023-10-03 14:17:24,946 - train_logger - INFO - Epoch:150
+2023-10-03 14:17:33,326 - train_logger - INFO - Epoch:155
+2023-10-03 14:17:41,668 - train_logger - INFO - Epoch:160
+2023-10-03 14:17:50,024 - train_logger - INFO - Epoch:165
+2023-10-03 14:17:58,674 - train_logger - INFO - Epoch:170
+2023-10-03 14:18:07,610 - train_logger - INFO - Epoch:175
+2023-10-03 14:18:16,896 - train_logger - INFO - Epoch:180
+2023-10-03 14:18:25,913 - train_logger - INFO - Epoch:185
+2023-10-03 14:18:36,092 - train_logger - INFO - Epoch:190
+2023-10-03 14:18:45,125 - train_logger - INFO - Epoch:195
+2023-10-03 14:18:54,041 - train_logger - INFO - Epoch:200
+2023-10-03 14:19:02,780 - train_logger - INFO - Epoch:205
+2023-10-03 14:19:11,720 - train_logger - INFO - Epoch:210
+2023-10-03 14:19:20,711 - train_logger - INFO - Epoch:215
+2023-10-03 14:19:29,473 - train_logger - INFO - Epoch:220
+2023-10-03 14:19:38,484 - train_logger - INFO - Epoch:225
+2023-10-03 14:19:47,068 - train_logger - INFO - Epoch:230
+2023-10-03 14:19:55,955 - train_logger - INFO - Epoch:235
+2023-10-03 14:20:04,828 - train_logger - INFO - Epoch:240
+2023-10-03 14:20:13,978 - train_logger - INFO - Epoch:245
+2023-10-03 14:20:22,923 - train_logger - INFO - Epoch:250
+2023-10-03 14:20:32,093 - train_logger - INFO - Epoch:255
+2023-10-03 14:20:40,680 - train_logger - INFO - Epoch:260
+2023-10-03 14:20:49,298 - train_logger - INFO - Epoch:265
+2023-10-03 14:20:58,049 - train_logger - INFO - Epoch:270
+2023-10-03 14:21:06,843 - train_logger - INFO - Epoch:275
+2023-10-03 14:21:15,302 - train_logger - INFO - Epoch:280
+2023-10-03 14:21:23,879 - train_logger - INFO - Epoch:285
+2023-10-03 14:21:32,309 - train_logger - INFO - Epoch:290
+2023-10-03 14:21:40,978 - train_logger - INFO - Epoch:295
+2023-10-03 14:36:43,955 - train_logger - INFO - python logging test
+2023-10-03 14:36:45,774 - train_logger - INFO - Epoch:0
+2023-10-03 14:36:54,328 - train_logger - INFO - Epoch:5
+2023-10-03 14:37:02,980 - train_logger - INFO - Epoch:10
+2023-10-03 14:37:11,630 - train_logger - INFO - Epoch:15
+2023-10-03 14:37:20,353 - train_logger - INFO - Epoch:20
+2023-10-03 14:37:29,345 - train_logger - INFO - Epoch:25
+2023-10-03 14:37:38,078 - train_logger - INFO - Epoch:30
+2023-10-03 14:37:46,488 - train_logger - INFO - Epoch:35
+2023-10-03 14:37:55,048 - train_logger - INFO - Epoch:40
+2023-10-03 14:38:03,422 - train_logger - INFO - Epoch:45
+2023-10-03 14:38:11,683 - train_logger - INFO - Epoch:50
+2023-10-03 14:38:19,913 - train_logger - INFO - Epoch:55
+2023-10-03 14:38:28,248 - train_logger - INFO - Epoch:60
+2023-10-03 14:38:36,438 - train_logger - INFO - Epoch:65
+2023-10-03 14:38:44,466 - train_logger - INFO - Epoch:70
+2023-10-03 14:38:52,918 - train_logger - INFO - Epoch:75
+2023-10-03 14:39:01,218 - train_logger - INFO - Epoch:80
+2023-10-03 14:39:09,572 - train_logger - INFO - Epoch:85
+2023-10-03 14:39:17,789 - train_logger - INFO - Epoch:90
+2023-10-03 14:39:25,932 - train_logger - INFO - Epoch:95
+2023-10-03 14:39:34,399 - train_logger - INFO - Epoch:100
+2023-10-03 14:39:42,842 - train_logger - INFO - Epoch:105
+2023-10-03 14:39:51,258 - train_logger - INFO - Epoch:110
+2023-10-03 14:39:59,687 - train_logger - INFO - Epoch:115
+2023-10-03 14:40:07,980 - train_logger - INFO - Epoch:120
+2023-10-03 14:40:16,270 - train_logger - INFO - Epoch:125
+2023-10-03 14:40:24,561 - train_logger - INFO - Epoch:130
+2023-10-03 14:40:33,045 - train_logger - INFO - Epoch:135
+2023-10-03 14:40:41,284 - train_logger - INFO - Epoch:140
+2023-10-03 14:40:49,632 - train_logger - INFO - Epoch:145
+2023-10-03 14:40:57,817 - train_logger - INFO - Epoch:150
+2023-10-03 14:41:06,093 - train_logger - INFO - Epoch:155
+2023-10-03 14:41:14,487 - train_logger - INFO - Epoch:160
+2023-10-03 14:41:22,678 - train_logger - INFO - Epoch:165
+2023-10-03 14:41:31,077 - train_logger - INFO - Epoch:170
+2023-10-03 14:41:39,279 - train_logger - INFO - Epoch:175
+2023-10-03 14:41:47,593 - train_logger - INFO - Epoch:180
+2023-10-03 14:41:55,940 - train_logger - INFO - Epoch:185
+2023-10-03 14:42:04,209 - train_logger - INFO - Epoch:190
+2023-10-03 14:42:12,645 - train_logger - INFO - Epoch:195
+2023-10-03 14:42:20,875 - train_logger - INFO - Epoch:200
+2023-10-03 14:42:29,361 - train_logger - INFO - Epoch:205
+2023-10-03 14:42:37,777 - train_logger - INFO - Epoch:210
+2023-10-03 14:42:45,938 - train_logger - INFO - Epoch:215
+2023-10-03 14:42:54,080 - train_logger - INFO - Epoch:220
+2023-10-03 14:43:02,349 - train_logger - INFO - Epoch:225
+2023-10-03 14:43:10,532 - train_logger - INFO - Epoch:230
+2023-10-03 14:43:18,506 - train_logger - INFO - Epoch:235
+2023-10-03 14:43:26,875 - train_logger - INFO - Epoch:240
+2023-10-03 14:43:35,033 - train_logger - INFO - Epoch:245
+2023-10-03 14:43:43,211 - train_logger - INFO - Epoch:250
+2023-10-03 14:43:51,518 - train_logger - INFO - Epoch:255
+2023-10-03 14:44:00,268 - train_logger - INFO - Epoch:260
+2023-10-03 14:44:08,861 - train_logger - INFO - Epoch:265
+2023-10-03 14:44:17,170 - train_logger - INFO - Epoch:270
+2023-10-03 14:44:25,776 - train_logger - INFO - Epoch:275
+2023-10-03 14:44:34,493 - train_logger - INFO - Epoch:280
+2023-10-03 14:44:43,046 - train_logger - INFO - Epoch:285
+2023-10-03 14:44:51,206 - train_logger - INFO - Epoch:290
+2023-10-03 14:44:59,596 - train_logger - INFO - Epoch:295
+2023-10-04 09:39:32,164 - train_logger - INFO - python logging test
+2023-10-04 09:39:34,156 - train_logger - INFO - Epoch:0
+2023-10-04 09:39:43,203 - train_logger - INFO - Epoch:5
+2023-10-04 09:39:53,933 - train_logger - INFO - Epoch:10
+2023-10-04 09:40:03,974 - train_logger - INFO - Epoch:15
+2023-10-04 09:40:13,934 - train_logger - INFO - Epoch:20
+2023-10-04 09:41:14,030 - train_logger - INFO - python logging test
+2023-10-04 09:43:15,760 - train_logger - INFO - python logging test
+2023-10-04 10:25:50,249 - train_logger - INFO - python logging test
+2023-10-04 10:25:52,098 - train_logger - INFO - Epoch:0
+2023-10-04 10:26:00,829 - train_logger - INFO - Epoch:5
+2023-10-04 10:26:09,583 - train_logger - INFO - Epoch:10
+2023-10-04 10:26:18,521 - train_logger - INFO - Epoch:15
+2023-10-04 10:26:27,064 - train_logger - INFO - Epoch:20
+2023-10-04 10:26:36,139 - train_logger - INFO - Epoch:25
+2023-10-04 10:26:45,088 - train_logger - INFO - Epoch:30
+2023-10-04 10:26:54,030 - train_logger - INFO - Epoch:35
+2023-10-04 10:27:02,540 - train_logger - INFO - Epoch:40
+2023-10-04 10:27:11,417 - train_logger - INFO - Epoch:45
+2023-10-04 10:27:19,747 - train_logger - INFO - Epoch:50
+2023-10-04 10:27:28,090 - train_logger - INFO - Epoch:55
+2023-10-04 10:27:36,286 - train_logger - INFO - Epoch:60
+2023-10-04 10:27:44,094 - train_logger - INFO - Epoch:65
+2023-10-04 10:27:52,255 - train_logger - INFO - Epoch:70
+2023-10-04 10:28:00,308 - train_logger - INFO - Epoch:75
+2023-10-04 10:28:08,375 - train_logger - INFO - Epoch:80
+2023-10-04 10:28:16,454 - train_logger - INFO - Epoch:85
+2023-10-04 10:28:24,584 - train_logger - INFO - Epoch:90
+2023-10-04 10:28:32,904 - train_logger - INFO - Epoch:95
+2023-10-04 10:28:41,494 - train_logger - INFO - Epoch:100
+2023-10-04 10:28:49,702 - train_logger - INFO - Epoch:105
+2023-10-04 10:28:58,136 - train_logger - INFO - Epoch:110
+2023-10-04 10:29:06,270 - train_logger - INFO - Epoch:115
+2023-10-04 10:29:14,577 - train_logger - INFO - Epoch:120
+2023-10-04 10:29:23,159 - train_logger - INFO - Epoch:125
+2023-10-04 10:29:31,032 - train_logger - INFO - Epoch:130
+2023-10-04 10:29:39,557 - train_logger - INFO - Epoch:135
+2023-10-04 10:29:48,109 - train_logger - INFO - Epoch:140
+2023-10-04 10:29:56,609 - train_logger - INFO - Epoch:145
+2023-10-04 10:30:04,584 - train_logger - INFO - Epoch:150
+2023-10-04 10:30:13,315 - train_logger - INFO - Epoch:155
+2023-10-04 10:30:21,937 - train_logger - INFO - Epoch:160
+2023-10-04 10:30:30,656 - train_logger - INFO - Epoch:165
+2023-10-04 10:30:39,804 - train_logger - INFO - Epoch:170
+2023-10-04 10:30:48,087 - train_logger - INFO - Epoch:175
+2023-10-04 10:30:56,503 - train_logger - INFO - Epoch:180
+2023-10-04 10:31:04,984 - train_logger - INFO - Epoch:185
+2023-10-04 10:31:13,244 - train_logger - INFO - Epoch:190
+2023-10-04 10:31:21,813 - train_logger - INFO - Epoch:195
+2023-10-04 10:31:30,323 - train_logger - INFO - Epoch:200
+2023-10-04 10:31:38,906 - train_logger - INFO - Epoch:205
+2023-10-04 10:31:47,592 - train_logger - INFO - Epoch:210
+2023-10-04 10:31:56,221 - train_logger - INFO - Epoch:215
+2023-10-04 10:32:04,638 - train_logger - INFO - Epoch:220
+2023-10-04 10:32:13,250 - train_logger - INFO - Epoch:225
+2023-10-04 10:32:21,775 - train_logger - INFO - Epoch:230
+2023-10-04 10:32:30,426 - train_logger - INFO - Epoch:235
+2023-10-04 10:32:39,006 - train_logger - INFO - Epoch:240
+2023-10-04 10:32:47,415 - train_logger - INFO - Epoch:245
+2023-10-04 10:32:55,861 - train_logger - INFO - Epoch:250
+2023-10-04 10:33:04,423 - train_logger - INFO - Epoch:255
+2023-10-04 10:33:12,946 - train_logger - INFO - Epoch:260
+2023-10-04 10:33:21,434 - train_logger - INFO - Epoch:265
+2023-10-04 10:33:29,835 - train_logger - INFO - Epoch:270
+2023-10-04 10:33:38,310 - train_logger - INFO - Epoch:275
+2023-10-04 10:33:46,866 - train_logger - INFO - Epoch:280
+2023-10-04 10:33:55,277 - train_logger - INFO - Epoch:285
+2023-10-04 10:34:03,807 - train_logger - INFO - Epoch:290
+2023-10-04 10:34:12,463 - train_logger - INFO - Epoch:295
+2023-10-04 10:42:31,901 - train_logger - INFO - python logging test
+2023-10-04 11:06:49,366 - train_logger - INFO - python logging test
+2023-10-04 11:06:51,285 - train_logger - INFO - Epoch:0
+2023-10-04 11:06:59,944 - train_logger - INFO - Epoch:5
+2023-10-04 11:07:08,491 - train_logger - INFO - Epoch:10
+2023-10-04 11:07:17,568 - train_logger - INFO - Epoch:15
+2023-10-04 11:07:26,248 - train_logger - INFO - Epoch:20
+2023-10-04 11:07:35,134 - train_logger - INFO - Epoch:25
+2023-10-04 11:07:44,418 - train_logger - INFO - Epoch:30
+2023-10-04 11:07:54,004 - train_logger - INFO - Epoch:35
+2023-10-04 11:08:03,389 - train_logger - INFO - Epoch:40
+2023-10-04 11:08:12,674 - train_logger - INFO - Epoch:45
+2023-10-04 11:08:21,639 - train_logger - INFO - Epoch:50
+2023-10-04 11:08:30,250 - train_logger - INFO - Epoch:55
+2023-10-04 11:08:38,905 - train_logger - INFO - Epoch:60
+2023-10-04 11:08:47,544 - train_logger - INFO - Epoch:65
+2023-10-04 11:08:56,438 - train_logger - INFO - Epoch:70
+2023-10-04 11:09:05,540 - train_logger - INFO - Epoch:75
+2023-10-04 11:09:14,338 - train_logger - INFO - Epoch:80
+2023-10-04 11:09:22,831 - train_logger - INFO - Epoch:85
+2023-10-04 11:09:31,531 - train_logger - INFO - Epoch:90
+2023-10-04 11:09:40,170 - train_logger - INFO - Epoch:95
+2023-10-04 11:09:49,075 - train_logger - INFO - Epoch:100
+2023-10-04 11:09:57,766 - train_logger - INFO - Epoch:105
+2023-10-04 11:10:06,915 - train_logger - INFO - Epoch:110
+2023-10-04 11:10:16,114 - train_logger - INFO - Epoch:115
+2023-10-04 11:10:25,037 - train_logger - INFO - Epoch:120
+2023-10-04 11:10:34,019 - train_logger - INFO - Epoch:125
+2023-10-04 11:10:42,565 - train_logger - INFO - Epoch:130
+2023-10-04 11:10:51,468 - train_logger - INFO - Epoch:135
+2023-10-04 11:11:00,014 - train_logger - INFO - Epoch:140
+2023-10-04 11:11:08,588 - train_logger - INFO - Epoch:145
+2023-10-04 11:11:17,301 - train_logger - INFO - Epoch:150
+2023-10-04 11:11:26,011 - train_logger - INFO - Epoch:155
+2023-10-04 11:11:34,684 - train_logger - INFO - Epoch:160
+2023-10-04 11:11:43,945 - train_logger - INFO - Epoch:165
+2023-10-04 11:11:52,794 - train_logger - INFO - Epoch:170
+2023-10-04 11:12:01,863 - train_logger - INFO - Epoch:175
+2023-10-04 11:12:10,817 - train_logger - INFO - Epoch:180
+2023-10-04 11:12:20,000 - train_logger - INFO - Epoch:185
+2023-10-04 11:12:28,784 - train_logger - INFO - Epoch:190
+2023-10-04 11:12:37,999 - train_logger - INFO - Epoch:195
+2023-10-04 11:12:47,026 - train_logger - INFO - Epoch:200
+2023-10-04 11:12:56,191 - train_logger - INFO - Epoch:205
+2023-10-04 11:13:05,434 - train_logger - INFO - Epoch:210
+2023-10-04 11:13:14,597 - train_logger - INFO - Epoch:215
+2023-10-04 11:13:23,486 - train_logger - INFO - Epoch:220
+2023-10-04 11:13:32,233 - train_logger - INFO - Epoch:225
+2023-10-04 11:13:41,426 - train_logger - INFO - Epoch:230
+2023-10-04 11:13:50,844 - train_logger - INFO - Epoch:235
+2023-10-04 11:14:00,290 - train_logger - INFO - Epoch:240
+2023-10-04 11:14:09,496 - train_logger - INFO - Epoch:245
+2023-10-04 11:14:18,731 - train_logger - INFO - Epoch:250
+2023-10-04 11:14:27,669 - train_logger - INFO - Epoch:255
+2023-10-04 11:14:36,387 - train_logger - INFO - Epoch:260
+2023-10-04 11:14:45,208 - train_logger - INFO - Epoch:265
+2023-10-04 11:14:54,085 - train_logger - INFO - Epoch:270
+2023-10-04 11:15:02,605 - train_logger - INFO - Epoch:275
+2023-10-04 11:15:11,094 - train_logger - INFO - Epoch:280
+2023-10-04 11:15:19,660 - train_logger - INFO - Epoch:285
+2023-10-04 11:15:28,144 - train_logger - INFO - Epoch:290
+2023-10-04 11:15:38,025 - train_logger - INFO - Epoch:295
+2023-10-05 09:06:44,143 - train_logger - INFO - python logging test
+2023-10-05 09:41:12,814 - train_logger - INFO - python logging test
+2023-10-05 09:41:28,345 - train_logger - INFO - python logging test
+2023-10-05 09:43:28,026 - train_logger - INFO - python logging test
+2023-10-05 09:45:43,230 - train_logger - INFO - python logging test
+2023-10-05 09:46:14,048 - train_logger - INFO - python logging test
+2023-10-05 09:48:12,713 - train_logger - INFO - python logging test
+2023-10-05 10:11:30,898 - train_logger - INFO - python logging test
+2023-10-05 10:11:32,697 - train_logger - INFO - Epoch:0
+2023-10-05 10:11:40,605 - train_logger - INFO - Epoch:5
+2023-10-05 10:11:48,675 - train_logger - INFO - Epoch:10
+2023-10-05 10:11:56,696 - train_logger - INFO - Epoch:15
+2023-10-05 10:12:04,728 - train_logger - INFO - Epoch:20
+2023-10-05 10:12:12,767 - train_logger - INFO - Epoch:25
+2023-10-05 10:12:20,801 - train_logger - INFO - Epoch:30
+2023-10-05 10:12:28,735 - train_logger - INFO - Epoch:35
+2023-10-05 10:12:36,660 - train_logger - INFO - Epoch:40
+2023-10-05 10:12:44,629 - train_logger - INFO - Epoch:45
+2023-10-05 10:12:52,801 - train_logger - INFO - Epoch:50
+2023-10-05 10:13:00,939 - train_logger - INFO - Epoch:55
+2023-10-05 10:13:08,944 - train_logger - INFO - Epoch:60
+2023-10-05 10:13:16,948 - train_logger - INFO - Epoch:65
+2023-10-05 10:13:24,968 - train_logger - INFO - Epoch:70
+2023-10-05 10:13:44,186 - train_logger - INFO - python logging test
+2023-10-05 10:53:22,637 - train_logger - INFO - python logging test
+2023-10-05 10:53:24,421 - train_logger - INFO - Epoch:0
+2023-10-05 10:53:32,595 - train_logger - INFO - Epoch:5
+2023-10-05 10:53:40,613 - train_logger - INFO - Epoch:10
+2023-10-05 10:53:48,510 - train_logger - INFO - Epoch:15
+2023-10-05 10:53:56,500 - train_logger - INFO - Epoch:20
+2023-10-05 10:54:04,513 - train_logger - INFO - Epoch:25
+2023-10-05 10:54:12,329 - train_logger - INFO - Epoch:30
+2023-10-05 10:54:19,545 - train_logger - INFO - Epoch:35
+2023-10-05 10:54:27,410 - train_logger - INFO - Epoch:40
+2023-10-05 10:54:34,898 - train_logger - INFO - Epoch:45
+2023-10-05 10:54:42,529 - train_logger - INFO - Epoch:50
+2023-10-05 10:54:50,477 - train_logger - INFO - Epoch:55
+2023-10-05 10:54:58,299 - train_logger - INFO - Epoch:60
+2023-10-05 10:55:06,291 - train_logger - INFO - Epoch:65
+2023-10-05 10:55:14,192 - train_logger - INFO - Epoch:70
+2023-10-05 10:55:22,205 - train_logger - INFO - Epoch:75
+2023-10-05 10:55:30,190 - train_logger - INFO - Epoch:80
+2023-10-05 10:55:38,268 - train_logger - INFO - Epoch:85
+2023-10-05 10:55:46,289 - train_logger - INFO - Epoch:90
+2023-10-05 10:55:54,305 - train_logger - INFO - Epoch:95
+2023-10-05 10:56:02,400 - train_logger - INFO - Epoch:100
+2023-10-05 10:56:10,412 - train_logger - INFO - Epoch:105
+2023-10-05 10:56:18,638 - train_logger - INFO - Epoch:110
+2023-10-05 10:56:26,356 - train_logger - INFO - Epoch:115
+2023-10-05 10:56:34,326 - train_logger - INFO - Epoch:120
+2023-10-05 10:56:42,251 - train_logger - INFO - Epoch:125
+2023-10-05 10:56:50,354 - train_logger - INFO - Epoch:130
+2023-10-05 10:56:58,257 - train_logger - INFO - Epoch:135
+2023-10-05 10:57:06,263 - train_logger - INFO - Epoch:140
+2023-10-05 10:57:14,328 - train_logger - INFO - Epoch:145
+2023-10-05 10:57:22,205 - train_logger - INFO - Epoch:150
+2023-10-05 10:57:30,248 - train_logger - INFO - Epoch:155
+2023-10-05 10:57:38,065 - train_logger - INFO - Epoch:160
+2023-10-05 10:57:45,609 - train_logger - INFO - Epoch:165
+2023-10-05 10:57:53,349 - train_logger - INFO - Epoch:170
+2023-10-05 10:58:01,144 - train_logger - INFO - Epoch:175
+2023-10-05 10:58:09,279 - train_logger - INFO - Epoch:180
+2023-10-05 10:58:17,123 - train_logger - INFO - Epoch:185
+2023-10-05 10:58:24,981 - train_logger - INFO - Epoch:190
+2023-10-05 10:58:32,926 - train_logger - INFO - Epoch:195
+2023-10-05 10:58:41,040 - train_logger - INFO - Epoch:200
+2023-10-05 10:58:49,140 - train_logger - INFO - Epoch:205
+2023-10-05 10:58:57,173 - train_logger - INFO - Epoch:210
+2023-10-05 10:59:05,471 - train_logger - INFO - Epoch:215
+2023-10-05 10:59:13,651 - train_logger - INFO - Epoch:220
+2023-10-05 10:59:21,327 - train_logger - INFO - Epoch:225
+2023-10-05 10:59:29,322 - train_logger - INFO - Epoch:230
+2023-10-05 10:59:37,327 - train_logger - INFO - Epoch:235
+2023-10-05 10:59:45,215 - train_logger - INFO - Epoch:240
+2023-10-05 10:59:52,924 - train_logger - INFO - Epoch:245
+2023-10-05 11:00:00,898 - train_logger - INFO - Epoch:250
+2023-10-05 11:00:08,669 - train_logger - INFO - Epoch:255
+2023-10-05 11:00:16,398 - train_logger - INFO - Epoch:260
+2023-10-05 11:00:24,334 - train_logger - INFO - Epoch:265
+2023-10-05 11:00:31,929 - train_logger - INFO - Epoch:270
+2023-10-05 11:00:39,357 - train_logger - INFO - Epoch:275
+2023-10-05 11:00:47,363 - train_logger - INFO - Epoch:280
+2023-10-05 11:00:55,272 - train_logger - INFO - Epoch:285
+2023-10-05 11:01:03,314 - train_logger - INFO - Epoch:290
+2023-10-05 11:01:11,244 - train_logger - INFO - Epoch:295
+2023-10-05 14:16:25,187 - train_logger - INFO - python logging test
+2023-10-05 20:50:20,226 - train_logger - INFO - python logging test
+2023-10-05 20:51:23,170 - train_logger - INFO - python logging test
+2023-10-05 20:51:25,043 - train_logger - INFO - Epoch:0
+2023-10-05 20:51:33,623 - train_logger - INFO - Epoch:5
+2023-10-05 20:51:41,700 - train_logger - INFO - Epoch:10
+2023-10-05 20:51:50,396 - train_logger - INFO - Epoch:15
+2023-10-05 20:51:59,947 - train_logger - INFO - Epoch:20
+2023-10-05 20:52:08,353 - train_logger - INFO - Epoch:25
+2023-10-05 20:52:16,436 - train_logger - INFO - Epoch:30
+2023-10-05 20:52:25,841 - train_logger - INFO - Epoch:35
+2023-10-05 20:52:33,981 - train_logger - INFO - Epoch:40
+2023-10-05 20:52:42,757 - train_logger - INFO - Epoch:45
+2023-10-05 20:52:51,328 - train_logger - INFO - Epoch:50
+2023-10-05 20:53:00,097 - train_logger - INFO - Epoch:55
+2023-10-05 20:53:09,128 - train_logger - INFO - Epoch:60
+2023-10-05 20:53:17,972 - train_logger - INFO - Epoch:65
+2023-10-05 20:53:26,632 - train_logger - INFO - Epoch:70
+2023-10-05 20:53:35,679 - train_logger - INFO - Epoch:75
+2023-10-05 20:53:44,531 - train_logger - INFO - Epoch:80
+2023-10-05 20:53:53,485 - train_logger - INFO - Epoch:85
+2023-10-05 20:54:02,298 - train_logger - INFO - Epoch:90
+2023-10-05 20:54:11,170 - train_logger - INFO - Epoch:95
+2023-10-05 20:54:20,182 - train_logger - INFO - Epoch:100
+2023-10-05 20:54:29,928 - train_logger - INFO - Epoch:105
+2023-10-05 20:54:38,878 - train_logger - INFO - Epoch:110
+2023-10-05 20:54:47,520 - train_logger - INFO - Epoch:115
+2023-10-05 20:54:56,381 - train_logger - INFO - Epoch:120
+2023-10-05 20:55:05,485 - train_logger - INFO - Epoch:125
+2023-10-05 20:55:14,350 - train_logger - INFO - Epoch:130
+2023-10-05 20:55:24,062 - train_logger - INFO - Epoch:135
+2023-10-05 20:55:33,502 - train_logger - INFO - Epoch:140
+2023-10-05 20:55:42,405 - train_logger - INFO - Epoch:145
+2023-10-05 20:55:51,500 - train_logger - INFO - Epoch:150
+2023-10-05 20:56:00,511 - train_logger - INFO - Epoch:155
+2023-10-05 20:56:09,574 - train_logger - INFO - Epoch:160
+2023-10-05 20:56:18,667 - train_logger - INFO - Epoch:165
+2023-10-05 20:56:27,605 - train_logger - INFO - Epoch:170
+2023-10-05 20:56:36,513 - train_logger - INFO - Epoch:175
+2023-10-05 20:56:45,210 - train_logger - INFO - Epoch:180
+2023-10-05 20:56:54,021 - train_logger - INFO - Epoch:185
+2023-10-05 20:57:03,236 - train_logger - INFO - Epoch:190
+2023-10-05 20:57:12,389 - train_logger - INFO - Epoch:195
+2023-10-05 20:57:21,627 - train_logger - INFO - Epoch:200
+2023-10-05 20:57:30,959 - train_logger - INFO - Epoch:205
+2023-10-05 20:57:40,184 - train_logger - INFO - Epoch:210
+2023-10-05 20:57:49,528 - train_logger - INFO - Epoch:215
+2023-10-05 20:57:58,556 - train_logger - INFO - Epoch:220
+2023-10-05 20:58:07,626 - train_logger - INFO - Epoch:225
+2023-10-05 20:58:16,956 - train_logger - INFO - Epoch:230
+2023-10-05 20:58:26,383 - train_logger - INFO - Epoch:235
+2023-10-05 20:58:36,345 - train_logger - INFO - Epoch:240
+2023-10-05 20:58:45,773 - train_logger - INFO - Epoch:245
+2023-10-05 20:58:55,053 - train_logger - INFO - Epoch:250
+2023-10-05 20:59:04,250 - train_logger - INFO - Epoch:255
+2023-10-05 20:59:13,391 - train_logger - INFO - Epoch:260
+2023-10-05 20:59:22,622 - train_logger - INFO - Epoch:265
+2023-10-05 20:59:31,868 - train_logger - INFO - Epoch:270
+2023-10-05 20:59:40,956 - train_logger - INFO - Epoch:275
+2023-10-05 20:59:50,076 - train_logger - INFO - Epoch:280
+2023-10-05 20:59:59,251 - train_logger - INFO - Epoch:285
+2023-10-05 21:00:08,015 - train_logger - INFO - Epoch:290
+2023-10-05 21:00:17,245 - train_logger - INFO - Epoch:295
+2023-10-05 23:03:02,921 - train_logger - INFO - python logging test
+2023-10-05 23:42:54,359 - train_logger - INFO - python logging test
+2023-10-05 23:42:56,085 - train_logger - INFO - Epoch:0
+2023-10-05 23:43:04,024 - train_logger - INFO - Epoch:5
+2023-10-05 23:43:11,982 - train_logger - INFO - Epoch:10
+2023-10-05 23:43:19,857 - train_logger - INFO - Epoch:15
+2023-10-05 23:43:27,948 - train_logger - INFO - Epoch:20
+2023-10-05 23:43:36,134 - train_logger - INFO - Epoch:25
+2023-10-05 23:43:44,148 - train_logger - INFO - Epoch:30
+2023-10-05 23:43:52,123 - train_logger - INFO - Epoch:35
+2023-10-05 23:44:00,233 - train_logger - INFO - Epoch:40
+2023-10-05 23:44:08,269 - train_logger - INFO - Epoch:45
+2023-10-05 23:44:16,306 - train_logger - INFO - Epoch:50
+2023-10-05 23:44:24,569 - train_logger - INFO - Epoch:55
+2023-10-05 23:44:32,715 - train_logger - INFO - Epoch:60
+2023-10-05 23:44:40,906 - train_logger - INFO - Epoch:65
+2023-10-05 23:44:48,941 - train_logger - INFO - Epoch:70
+2023-10-05 23:44:57,064 - train_logger - INFO - Epoch:75
+2023-10-05 23:45:05,231 - train_logger - INFO - Epoch:80
+2023-10-05 23:45:13,152 - train_logger - INFO - Epoch:85
+2023-10-05 23:45:21,371 - train_logger - INFO - Epoch:90
+2023-10-05 23:45:29,339 - train_logger - INFO - Epoch:95
+2023-10-05 23:45:37,469 - train_logger - INFO - Epoch:100
+2023-10-05 23:45:45,646 - train_logger - INFO - Epoch:105
+2023-10-05 23:45:53,783 - train_logger - INFO - Epoch:110
+2023-10-05 23:46:01,832 - train_logger - INFO - Epoch:115
+2023-10-05 23:46:09,813 - train_logger - INFO - Epoch:120
+2023-10-05 23:46:17,927 - train_logger - INFO - Epoch:125
+2023-10-05 23:46:25,829 - train_logger - INFO - Epoch:130
+2023-10-05 23:46:33,952 - train_logger - INFO - Epoch:135
+2023-10-05 23:46:41,977 - train_logger - INFO - Epoch:140
+2023-10-05 23:46:50,085 - train_logger - INFO - Epoch:145
+2023-10-05 23:46:58,285 - train_logger - INFO - Epoch:150
+2023-10-05 23:47:06,248 - train_logger - INFO - Epoch:155
+2023-10-05 23:47:14,454 - train_logger - INFO - Epoch:160
+2023-10-05 23:47:22,487 - train_logger - INFO - Epoch:165
+2023-10-05 23:47:30,491 - train_logger - INFO - Epoch:170
+2023-10-05 23:47:38,437 - train_logger - INFO - Epoch:175
+2023-10-05 23:47:46,497 - train_logger - INFO - Epoch:180
+2023-10-05 23:47:54,613 - train_logger - INFO - Epoch:185
+2023-10-05 23:48:02,668 - train_logger - INFO - Epoch:190
+2023-10-05 23:48:10,769 - train_logger - INFO - Epoch:195
+2023-10-05 23:48:18,883 - train_logger - INFO - Epoch:200
+2023-10-05 23:48:28,430 - train_logger - INFO - Epoch:205
+2023-10-05 23:48:38,172 - train_logger - INFO - Epoch:210
+2023-10-05 23:48:47,943 - train_logger - INFO - Epoch:215
+2023-10-05 23:48:57,458 - train_logger - INFO - Epoch:220
+2023-10-05 23:49:07,096 - train_logger - INFO - Epoch:225
+2023-10-05 23:49:16,743 - train_logger - INFO - Epoch:230
+2023-10-05 23:49:26,221 - train_logger - INFO - Epoch:235
+2023-10-05 23:49:35,732 - train_logger - INFO - Epoch:240
+2023-10-05 23:49:45,200 - train_logger - INFO - Epoch:245
+2023-10-05 23:49:54,886 - train_logger - INFO - Epoch:250
+2023-10-05 23:50:04,339 - train_logger - INFO - Epoch:255
+2023-10-05 23:50:13,966 - train_logger - INFO - Epoch:260
+2023-10-05 23:50:23,607 - train_logger - INFO - Epoch:265
+2023-10-05 23:50:33,090 - train_logger - INFO - Epoch:270
+2023-10-05 23:50:42,828 - train_logger - INFO - Epoch:275
+2023-10-05 23:50:52,578 - train_logger - INFO - Epoch:280
+2023-10-05 23:51:02,667 - train_logger - INFO - Epoch:285
+2023-10-05 23:51:12,291 - train_logger - INFO - Epoch:290
+2023-10-05 23:51:22,112 - train_logger - INFO - Epoch:295
+2023-10-06 00:05:07,428 - train_logger - INFO - python logging test
+2023-10-06 10:09:20,442 - train_logger - INFO - python logging test
+2023-10-06 10:09:22,617 - train_logger - INFO - Epoch:0
+2023-10-06 10:09:31,724 - train_logger - INFO - Epoch:5
+2023-10-06 10:09:40,145 - train_logger - INFO - Epoch:10
+2023-10-06 10:09:48,458 - train_logger - INFO - Epoch:15
+2023-10-06 10:09:56,688 - train_logger - INFO - Epoch:20
+2023-10-06 10:10:05,260 - train_logger - INFO - Epoch:25
+2023-10-06 10:10:15,376 - train_logger - INFO - Epoch:30
+2023-10-06 10:10:24,167 - train_logger - INFO - Epoch:35
+2023-10-06 10:10:32,410 - train_logger - INFO - Epoch:40
+2023-10-06 10:10:40,573 - train_logger - INFO - Epoch:45
+2023-10-06 10:10:48,816 - train_logger - INFO - Epoch:50
+2023-10-06 10:10:56,966 - train_logger - INFO - Epoch:55
+2023-10-06 10:11:05,171 - train_logger - INFO - Epoch:60
+2023-10-06 10:11:13,361 - train_logger - INFO - Epoch:65
+2023-10-06 10:11:21,744 - train_logger - INFO - Epoch:70
+2023-10-06 10:11:30,129 - train_logger - INFO - Epoch:75
+2023-10-06 10:11:38,610 - train_logger - INFO - Epoch:80
+2023-10-06 10:11:46,512 - train_logger - INFO - Epoch:85
+2023-10-06 10:11:54,743 - train_logger - INFO - Epoch:90
+2023-10-06 10:12:02,876 - train_logger - INFO - Epoch:95
+2023-10-06 10:12:11,051 - train_logger - INFO - Epoch:100
+2023-10-06 10:12:19,592 - train_logger - INFO - Epoch:105
+2023-10-06 10:12:28,212 - train_logger - INFO - Epoch:110
+2023-10-06 10:12:36,846 - train_logger - INFO - Epoch:115
+2023-10-06 10:12:45,235 - train_logger - INFO - Epoch:120
+2023-10-06 10:12:53,715 - train_logger - INFO - Epoch:125
+2023-10-06 10:13:01,881 - train_logger - INFO - Epoch:130
+2023-10-06 10:13:10,736 - train_logger - INFO - Epoch:135
+2023-10-06 10:13:18,903 - train_logger - INFO - Epoch:140
+2023-10-06 10:13:26,926 - train_logger - INFO - Epoch:145
+2023-10-06 10:13:35,470 - train_logger - INFO - Epoch:150
+2023-10-06 10:13:44,461 - train_logger - INFO - Epoch:155
+2023-10-06 10:13:53,841 - train_logger - INFO - Epoch:160
+2023-10-06 10:14:02,556 - train_logger - INFO - Epoch:165
+2023-10-06 10:14:11,016 - train_logger - INFO - Epoch:170
+2023-10-06 10:14:19,250 - train_logger - INFO - Epoch:175
+2023-10-06 10:14:27,587 - train_logger - INFO - Epoch:180
+2023-10-06 10:14:35,953 - train_logger - INFO - Epoch:185
+2023-10-06 10:14:44,582 - train_logger - INFO - Epoch:190
+2023-10-06 10:14:53,373 - train_logger - INFO - Epoch:195
+2023-10-06 10:15:02,070 - train_logger - INFO - Epoch:200
+2023-10-06 10:15:11,444 - train_logger - INFO - Epoch:205
+2023-10-06 10:15:19,980 - train_logger - INFO - Epoch:210
+2023-10-06 10:15:28,318 - train_logger - INFO - Epoch:215
+2023-10-06 10:15:36,468 - train_logger - INFO - Epoch:220
+2023-10-06 10:15:45,074 - train_logger - INFO - Epoch:225
+2023-10-06 10:15:53,444 - train_logger - INFO - Epoch:230
+2023-10-06 10:16:01,787 - train_logger - INFO - Epoch:235
+2023-10-06 10:16:09,811 - train_logger - INFO - Epoch:240
+2023-10-06 10:16:18,176 - train_logger - INFO - Epoch:245
+2023-10-06 10:16:26,322 - train_logger - INFO - Epoch:250
+2023-10-06 10:16:34,520 - train_logger - INFO - Epoch:255
+2023-10-06 10:16:42,915 - train_logger - INFO - Epoch:260
+2023-10-06 10:16:51,161 - train_logger - INFO - Epoch:265
+2023-10-06 10:16:59,600 - train_logger - INFO - Epoch:270
+2023-10-06 10:17:07,889 - train_logger - INFO - Epoch:275
+2023-10-06 10:17:15,912 - train_logger - INFO - Epoch:280
+2023-10-06 10:17:24,087 - train_logger - INFO - Epoch:285
+2023-10-06 10:17:32,189 - train_logger - INFO - Epoch:290
+2023-10-06 10:17:40,440 - train_logger - INFO - Epoch:295

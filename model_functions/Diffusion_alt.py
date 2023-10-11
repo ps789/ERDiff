@@ -4,6 +4,7 @@ from functools import partial
 
 import matplotlib.pyplot as plt
 from tqdm.auto import tqdm
+from einops import rearrange
 
 import torch
 from torch import nn, einsum
@@ -72,7 +73,34 @@ class DiffusionEmbedding(nn.Module):
         table = torch.cat([torch.sin(table), torch.cos(table)], dim=1)  
         return table
 
+# class LabelEmbedding(nn.Module):
+#     def __init__(self, num_steps, embedding_dim=128, projection_dim=None):
+#         super().__init__()
+#         if projection_dim is None:
+#             projection_dim = embedding_dim
+#         self.register_buffer(
+#             "embedding",
+#             self._build_embedding(num_steps, embedding_dim / 2),
+#             persistent=False,
+#         )
+#         self.projection1 = nn.Linear(embedding_dim, projection_dim)
+#         self.projection2 = nn.Linear(projection_dim, projection_dim)
 
+#     def forward(self, label):
+#         x = self.embedding[label]
+#         x = self.projection1(x)
+#         x = F.silu(x)
+#         x = self.projection2(x)
+#         x = F.silu(x)
+#         return x
+
+#     def _build_embedding(self, num_steps, dim=64):
+#         steps = torch.arange(num_steps).unsqueeze(1)  
+#         frequencies = 10.0 ** (torch.arange(dim) / (dim - 1) * 4.0).unsqueeze(0) 
+#         table = steps * frequencies  
+#         table = torch.cat([torch.sin(table), torch.cos(table)], dim=1)  
+#         return table
+    
 class diff_STBlock(nn.Module):
     def __init__(self, inputdim=2):
         super().__init__()
@@ -83,8 +111,8 @@ class diff_STBlock(nn.Module):
             embedding_dim=diff_embedding_dim,
         )
         self.label_embedding = DiffusionEmbedding(
-            num_steps=8,
-            embedding_dim=diff_embedding_dim,
+            num_steps = 8,
+            embedding_dim = label_embedding_dim,
         )
 
         self.input_projection = Conv1d_with_init(inputdim, self.channels, 1)
@@ -97,26 +125,26 @@ class diff_STBlock(nn.Module):
                 STBlock(
                     channels=self.channels,
                     diffusion_embedding_dim=diff_embedding_dim,
+                    label_embedding_dim = label_embedding_dim,
                     nheads=diff_nheads,
                 )
                 for _ in range(diff_layers)
             ]
         )
 
-    def forward(self, x, diffusion_step, label):
+    def forward(self, x, label, diffusion_step):
         B, inputdim, K, L = x.shape
 
         x = x.reshape(B, inputdim, K * L)
         x = self.input_projection(x)
         x = F.relu(x)
         x = x.reshape(B, self.channels, K, L)
-
         diffusion_emb = self.diffusion_embedding(diffusion_step)
         label_emb = self.label_embedding(label)
 
         skip = []
         for layer in self.STBlock_layers:
-            x, skip_connection = layer(x, diffusion_emb, label_emb)
+            x, skip_connection = layer(x, label_emb, diffusion_emb)
             skip.append(skip_connection)
 
         x = torch.sum(torch.stack(skip), dim=0) / math.sqrt(len(self.STBlock_layers))
@@ -129,7 +157,7 @@ class diff_STBlock(nn.Module):
 
 
 class STBlock(nn.Module):
-    def __init__(self, channels, diffusion_embedding_dim, nheads):
+    def __init__(self, channels, diffusion_embedding_dim, label_embedding_dim, nheads):
         super().__init__()
         self.diffusion_projection = nn.Linear(diffusion_embedding_dim, channels)
         self.label_projection = nn.Linear(label_embedding_dim, channels)
@@ -154,14 +182,14 @@ class STBlock(nn.Module):
         y = y.reshape(B, L, channel, K).permute(0, 2, 3, 1).reshape(B, channel, K * L)
         return y
 
-    def forward(self, x, diffusion_emb, label_emb):
+    def forward(self, x, label_emb, diffusion_emb):
         B, channel, K, L = x.shape
         base_shape = x.shape
         x = x.reshape(B, channel, K * L)
 
-        diffusion_emb = self.diffusion_projection(diffusion_emb).unsqueeze(-1) 
-        label_emb = self.label_projection(label_emb).unsqueeze(-1) 
-        y = x + diffusion_emb + label_emb
+        diffusion_emb = self.diffusion_projection(diffusion_emb).unsqueeze(-1)  
+        label_emb = self.label_projection(label_emb).unsqueeze(-1)  
+        y = x + diffusion_emb# + label_emb
 
         y = self.forward_temporal(y, base_shape)
         y = self.forward_spatio(y, base_shape) 
@@ -227,7 +255,7 @@ def p_losses(denoise_model, x_start, t, noise=None):
         noise = torch.randn_like(x_start[0])
 
     x_noisy = q_sample(x_start=x_start[0], t=t, noise=noise)
-    predicted_noise = denoise_model(x_noisy, t, x_start[1])
+    predicted_noise = denoise_model(x_noisy, x_start[1], t)
 
     loss = F.l1_loss(noise, predicted_noise)
 

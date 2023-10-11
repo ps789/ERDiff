@@ -27,6 +27,7 @@ from model_functions.Diffusion import *
 from model_functions.VAE import *
 from model_functions.ERDiff_utils import *
 
+conditional = True
 logger = logging.getLogger('train_logger')
 logger.setLevel(level=logging.INFO)
 handler = logging.FileHandler('train.log')
@@ -93,7 +94,7 @@ train_trial_spikes_smoothed = np.apply_along_axis(filt, 1, train_trial_spikes_ti
 
 
 indices = np.arange(train_trial_spikes_tide.shape[0])
-np.random.seed(2020) 
+np.random.seed(2023) 
 np.random.shuffle(indices)
 train_len = round(len(indices) * 0.80)
 real_train_trial_spikes_smed, val_trial_spikes_smed = train_trial_spikes_smoothed[indices[:train_len]], train_trial_spikes_smoothed[indices[train_len:]]
@@ -112,7 +113,7 @@ import sys
 from tqdm import tqdm_notebook
 
 n_steps = 1
-n_epochs = 500
+n_epochs = 10
 batch_size = 16
 ae_res_weight = 10
 kld_weight = 1
@@ -131,7 +132,7 @@ gamma_ = np.float32(1.)
 mse_criterion = nn.MSELoss()
 poisson_criterion = nn.PoissonNLLLoss(log_input=False)
 
-l_rate = 0.001
+l_rate = 0.0001
 
 
 real_train_trial_spikes_stand = (real_train_trial_spikes_smed)
@@ -173,7 +174,8 @@ loss_list = []
 
 model = VAE_Model()
 optimizer = torch.optim.Adam(model.parameters(), lr=l_rate)
-
+vanilla_model_dict = torch.load('model_checkpoints/source_vae_model_conditional' if conditional else 'model_checkpoints/source_vae_model')
+model.load_state_dict(vanilla_model_dict)
 from torch.optim import Adam
 
 import numpy as np
@@ -297,8 +299,10 @@ input_dim = 1
 
 dm_model = diff_STBlock(input_dim)
 dm_model.to(device)
+diff_model_dict = torch.load('model_checkpoints/source_diffusion_model_conditional' if conditional else 'model_checkpoints/source_diffusion_model_conditional')
+dm_model.load_state_dict(diff_model_dict)
 
-dm_optimizer = Adam(dm_model.parameters(), lr=1e-3)
+dm_optimizer = Adam(dm_model.parameters(), lr=1e-4)
 # model
 
 from torchvision.utils import save_image
@@ -307,7 +311,6 @@ from torchvision.utils import save_image
 epochs = 500
 pre_loss = 1e10
 
-conditional = True
 from torchvision import transforms
 from torch.utils.data import DataLoader
 losses = []
@@ -373,6 +376,7 @@ for epoch in tqdm_notebook(range(n_epochs)):
     print("total Loss of epoch ", epoch, " is ", total_loss, flush = True)
     losses.append(total_loss)
     if total_loss < pre_loss:
+        print(pre_loss)
         pre_loss = total_loss
         torch.save(dm_model.state_dict(), 'model_checkpoints/source_diffusion_model_conditional' if conditional else 'model_checkpoints/source_diffusion_model')
 
