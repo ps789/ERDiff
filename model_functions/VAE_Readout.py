@@ -9,6 +9,7 @@ from einops import rearrange
 import torch
 from torch import nn, einsum
 import torch.nn.functional as F
+from model_functions.Diffusion import DiffusionEmbedding
 
 import numpy as np
 import scipy.io as sio
@@ -34,6 +35,10 @@ class VAE_Readout_Model(nn.Module):
         self.latent_dim = 8
         self.vel_dim = 2
         self.encoder_n_layers, self.decoder_n_layers = 2,1
+        self.label_embed = DiffusionEmbedding(
+            num_steps=8,
+            embedding_dim=32)
+        self.label_projector = nn.Linear(32, self.latent_dim*37)
         self.hidden_dims = [64,32]
         self.elu = nn.ELU()
         self.softplus = nn.Softplus()
@@ -84,7 +89,9 @@ class VAE_Readout_Model(nn.Module):
         self.vde_fc_minus_1 = nn.Linear(self.latent_dim, 2, bias = False)
         self.vde_fc_minus_2 = nn.Linear(self.latent_dim, 2, bias = False)
 
-        
+    def condition_on_label(self, z, y):
+        projected_label = self.label_projector(self.label_embed(y.long())).view(-1, 37, self.latent_dim)
+        return z + projected_label
     def reparameterize(self, mu, logvar):
         """
         Reparameterization trick to sample from N(mu, var) from

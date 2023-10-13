@@ -9,7 +9,7 @@ from einops import rearrange
 import torch
 from torch import nn, einsum
 import torch.nn.functional as F
-
+from model_functions.Diffusion import DiffusionEmbedding
 import numpy as np
 import scipy.io as sio
 import matplotlib.pyplot as plt
@@ -27,6 +27,7 @@ len_trial,num_neurons = 37, 187
 start_pos = 1 
 end_pos = 1
 
+
 class VAE_Model(nn.Module):
     def __init__(self):
         super(VAE_Model, self).__init__()
@@ -37,7 +38,10 @@ class VAE_Model(nn.Module):
         self.vel_dim = 2
         self.encoder_n_layers, self.decoder_n_layers = 2,1
         self.hidden_dims = [64,32]
-
+        self.label_embed = DiffusionEmbedding(
+            num_steps=8,
+            embedding_dim=32)
+        self.label_projector = nn.Linear(32, self.latent_dim*37)
         # Low-D Readin
         self.low_d_readin_s = nn.Linear(self.spike_dim,self.low_dim, bias = False)
 
@@ -91,15 +95,18 @@ class VAE_Model(nn.Module):
         std = torch.exp(0.5 * logvar)
         eps = torch.randn_like(std)
         return eps * std + mu
-
-    def forward(self, x, train_flag):
+    def condition_on_label(self, z, y):
+        projected_label = self.label_projector(self.label_embed(y.long())).view(-1, 37, self.latent_dim)
+        return z + projected_label
+    
+    def forward(self, x, y, train_flag):
         # Encoder 
 
         x = self.low_d_readin_s(x)
 
         rnn_states, _ = self.encoder_rnn(x)
 
-        mu = self.fc_mu_1(rnn_states)
+        mu = self.condition_on_label(self.fc_mu_1(rnn_states), y)
         # mu = self.fc_mu_2(mu)
 
         log_var = self.fc_log_var_1(rnn_states)

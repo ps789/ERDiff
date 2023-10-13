@@ -10,7 +10,7 @@ import torch
 from torch import nn, einsum
 import torch.nn.functional as F
 import torch.linalg as linalg
-
+from model_functions.Diffusion import DiffusionEmbedding
 import numpy as np
 import scipy.io as sio
 import matplotlib.pyplot as plt
@@ -35,6 +35,10 @@ class VAE_MLA_Model(nn.Module):
         self.low_dim = 64
         self.latent_dim = 8
         self.vel_dim = 2
+        self.label_embed = DiffusionEmbedding(
+            num_steps=8,
+            embedding_dim=32)
+        self.label_projector = nn.Linear(32, self.latent_dim*37)
         self.encoder_n_layers, self.decoder_n_layers = 2,1
         self.hidden_dims = [64,32]
         self.elu = nn.ELU()
@@ -86,6 +90,9 @@ class VAE_MLA_Model(nn.Module):
         self.vde_fc_minus_1 = nn.Linear(self.latent_dim, 2, bias = False)
         self.vde_fc_minus_2 = nn.Linear(self.latent_dim, 2, bias = False)
 
+    def condition_on_label(self, z, y):
+        projected_label = self.label_projector(self.label_embed(y.long())).view(-1, 37, self.latent_dim)
+        return z + projected_label
     def reparameterize(self, mu, logvar):
         """
         Reparameterization trick to sample from N(mu, var) from
@@ -134,13 +141,13 @@ class VAE_MLA_Model(nn.Module):
         return (trace_term + mean_term).float()
 
 
-    def forward(self, x_0, x_k, p, q, train_flag):
+    def forward(self, x_0, x_k, y_0, y_k, p, q, train_flag):
 
        # Encoder
         # x_0
         x_0 = self.low_d_readin_s(x_0)
         rnn_states_x_0, _ = self.encoder_rnn(x_0)
-        mu_x_0 = self.fc_mu_1(rnn_states_x_0)
+        mu_x_0 = self.condition_on_label(self.fc_mu_1(rnn_states_x_0), y_0)
         log_var_0 = self.fc_log_var_1(rnn_states_x_0)
         
         if train_flag:
@@ -155,7 +162,7 @@ class VAE_MLA_Model(nn.Module):
         # x_k = self.align_layer(x_k)
         x_k_al = self.low_d_readin_t(x_k)
         rnn_states_x_k, _ = self.encoder_rnn(x_k_al)
-        mu_x_k = self.fc_mu_1(rnn_states_x_k)
+        mu_x_k = self.condition_on_label(self.fc_mu_1(rnn_states_x_k), y_k)
         log_var_k = self.fc_log_var_1(rnn_states_x_k)
         # mu_x_k = self.fc_mu_2(mu_x_k)
         latent_states_x_k_tide = mu_x_k.reshape((mu_x_k.shape[0], -1))

@@ -93,13 +93,13 @@ train_trial_spikes_smoothed = np.apply_along_axis(filt, 1, train_trial_spikes_ti
 
 
 indices = np.arange(train_trial_spikes_tide.shape[0])
-np.random.seed(2020) 
+np.random.seed(2024) 
 np.random.shuffle(indices)
 train_len = round(len(indices) * 0.80)
 real_train_trial_spikes_smed, val_trial_spikes_smed = train_trial_spikes_smoothed[indices[:train_len]], train_trial_spikes_smoothed[indices[train_len:]]
 real_train_trial_vel_tide, val_trial_vel_tide = train_trial_vel_tide[indices[:train_len]], train_trial_vel_tide[indices[train_len:]]
 real_train_trial_dic_tide, val_trial_dic_tide = train_trial_dic_tide[indices[:train_len]], train_trial_dic_tide[indices[train_len:]]
-
+real_train_trial_labels, val_trial_labels = np.array([real_train_trial_dic_tide[i][0][0] for i in range(len(real_train_trial_dic_tide))]), np.array([val_trial_dic_tide[i][0][0] for i in range(len(val_trial_dic_tide))])
 import torch
 import torch.nn.functional as F
 import torch.nn as nn
@@ -143,10 +143,12 @@ spike_val = Variable(torch.from_numpy(val_trial_spikes_stand)).float()
 
 emg_train = Variable(torch.from_numpy(real_train_trial_vel_tide)).float()
 emg_val = Variable(torch.from_numpy(val_trial_vel_tide)).float()
+label_train = Variable(torch.from_numpy(real_train_trial_labels)).long()
+label_val = Variable(torch.from_numpy(val_trial_labels)).long()
 
 
-def get_loss(model, spike, emg):
-    re_sp_, vel_hat_,mu, log_var = model(spike, train_flag= True)
+def get_loss(model, spike, emg, label):
+    re_sp_, vel_hat_,mu, log_var = model(spike, label, train_flag= True)
     ae_loss = poisson_criterion(re_sp_, spike)
     emg_loss = mse_criterion(vel_hat_, emg)
     kld_loss = torch.mean(0.5 * (- log_var + mu ** 2 + log_var.exp() - 1))
@@ -307,34 +309,36 @@ from torchvision.utils import save_image
 epochs = 500
 pre_loss = 1e10
 
-conditional = True
+conditional = False
 from torchvision import transforms
 from torch.utils.data import DataLoader
 losses = []
 for epoch in tqdm_notebook(range(n_epochs)):
     spike_gen_obj = get_batches(real_train_trial_spikes_stand,batch_size)
     emg_gen_obj = get_batches(real_train_trial_vel_tide,batch_size)
-    #label_obj = get_batches(real_train_trial_dic_tide,batch_size)
+    label_obj = get_batches(real_train_trial_labels,batch_size)
     for ii in range(n_batches):
         optimizer.zero_grad()
         spike_batch = next(spike_gen_obj)
         emg_batch = next(emg_gen_obj)
+        label_batch = next(label_obj)
 
         spike_batch = Variable(torch.from_numpy(spike_batch)).float()
         emg_batch = Variable(torch.from_numpy(emg_batch)).float()
+        label_batch = Variable(torch.from_numpy(label_batch)).long()
 
         # Loss
-        batch_loss = get_loss(model, spike_batch, emg_batch)
+        batch_loss = get_loss(model, spike_batch, emg_batch, label_batch)
 
         batch_loss.backward()
         optimizer.step()
         
 
     with torch.no_grad():
-        val_total_loss = get_loss(model, spike_val, emg_val)
+        val_total_loss = get_loss(model, spike_val, emg_val, label_val)
         loss_list.append(val_total_loss.item())
 
-        _, _, train_latents, _ = model(spike_train, train_flag = False)
+        _, _, train_latents, _ = model(spike_train, label_train, train_flag = False)
 
         if val_total_loss < pre_total_loss_: 
             pre_total_loss_ = val_total_loss
@@ -346,7 +350,7 @@ for epoch in tqdm_notebook(range(n_epochs)):
         
     train_latents = np.expand_dims(train_latents,1).astype(np.float32)
     train_spike_data = train_latents.transpose(0,1,3,2)
-    paired_dataset = PairedDataset(train_spike_data, [real_train_trial_dic_tide[i][0][0] for i in range(len(real_train_trial_dic_tide))])
+    paired_dataset = PairedDataset(train_spike_data, real_train_trial_labels)
     dataloader = DataLoader(paired_dataset, batch_size=global_batch_size)
 
     batch = next(iter(dataloader))

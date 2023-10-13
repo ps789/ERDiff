@@ -109,6 +109,10 @@ spike_train = Variable(torch.from_numpy(real_train_trial_spikes_stand)).float()
 spike_val = Variable(torch.from_numpy(val_trial_spikes_stand)).float()
 spike_test = Variable(torch.from_numpy(test_trial_spikes_stand)).float()
 
+label_train = Variable(torch.Tensor([real_train_trial_dic_tide[i][0][0] for i in range(len(real_train_trial_dic_tide))])).long()
+label_val = Variable(torch.Tensor([val_trial_dic_tide[i][0][0] for i in range(len(val_trial_dic_tide))])).long()
+label_test = Variable(torch.Tensor([test_trial_dic_tide[i][0][0] for i in range(len(test_trial_dic_tide))])).long()
+
 
 timesteps = 50
 eps = 1 / timesteps
@@ -120,7 +124,7 @@ input_dim = 1
 
 
 diff_model = diff_STBlock(input_dim)
-conditional = True
+conditional = False
 diff_model_dict = torch.load('model_checkpoints/source_diffusion_model_conditional' if conditional else 'model_checkpoints/source_diffusion_model')
 diff_model.load_state_dict(diff_model_dict)
 
@@ -188,6 +192,11 @@ MLA_model.sde_fc2.weight.requires_grad = False
 MLA_model.sde_fc2.bias.requires_grad = False
 MLA_model.vde_fc_minus_0.weight.requires_grad = False
 
+for param in MLA_model.label_embed.parameters():
+    param.requires_grad = False
+MLA_model.label_projector.bias.requires_grad = False
+MLA_model.label_projector.weight.requires_grad = False
+
 
 epoches = 300
 test_trial_spikes_stand_half_len = len(test_trial_spikes_stand) // 2
@@ -195,16 +204,14 @@ test_trial_spikes_stand_half_len = len(test_trial_spikes_stand) // 2
 
 spike_day_0 = Variable(torch.from_numpy(real_train_trial_spikes_stand)).float()
 spike_day_k = Variable(torch.from_numpy(test_trial_spikes_stand[:test_trial_spikes_stand_half_len])).float()
-labels = Variable(torch.Tensor([test_trial_dic_tide[i][0][0] for i in range(len(test_trial_dic_tide)//2)]))
-
+labels_0 = Variable(torch.Tensor([real_train_trial_dic_tide[i][0][0] for i in range(len(real_train_trial_dic_tide))])).long()
+labels_k = Variable(torch.Tensor([test_trial_dic_tide[i][0][0] for i in range(len(test_trial_dic_tide))][:test_trial_spikes_stand_half_len])).long()
 num_x, num_y, num_y_test = spike_day_0.shape[0], spike_day_k.shape[0], test_trial_spikes_stand.shape[0]
-
 p = Variable(torch.from_numpy(np.full((num_x, 1), 1 / num_x))).float()
 q = Variable(torch.from_numpy(np.full((num_y, 1), 1 / num_y))).float()
 q_test = Variable(torch.from_numpy(np.full((num_y_test, 1), 1 / num_y_test))).float()
-
 def logger_performance(model):
-    re_sp_test, vel_hat_test, _, _, _, _,_ = model(spike_train, spike_test, p, q_test, train_flag=False)
+    re_sp_test, vel_hat_test, _, _, _, _,_ = model(spike_train, spike_test, label_train, label_test, p, q_test, train_flag=False)
 
     sys.stdout.flush()
     key_metric = 100 * r2_score(test_trial_vel_tide.reshape((-1,2)),vel_hat_test.reshape((-1,2)), multioutput='uniform_average')
@@ -214,7 +221,7 @@ def logger_performance(model):
 
 for epoch in range(epoches):
     optimizer.zero_grad()
-    re_sp, _, distri_0, distri_k, latents_k, output_sh_loss, log_var = MLA_model(spike_day_0, spike_day_k, p, q, train_flag=True) 
+    re_sp, _, distri_0, distri_k, latents_k, output_sh_loss, log_var = MLA_model(spike_day_0, spike_day_k, labels_0, labels_k, p, q, train_flag=True) 
     total_loss = output_sh_loss
 
     latents_k = latents_k[:, None, :, :]
@@ -225,7 +232,7 @@ for epoch in range(epoches):
 
 
     z_noisy = q_sample(x_start=latents_k, t=t, noise=noise)
-    predicted_noise = diff_model(z_noisy, t, labels.long())
+    predicted_noise = diff_model(z_noisy, t, labels_k)
     total_loss += appro_alpha * F.smooth_l1_loss(noise, predicted_noise)
     
     total_loss += skilling_divergence(z_noisy,latents_k,t)
@@ -253,7 +260,7 @@ MLA_model = VAE_MLA_Model()
 MLA_model.load_state_dict(vanilla_model_dict)
 
 with torch.no_grad():
-    _, _, _, _, test_latents, _,_ = MLA_model(spike_train, spike_test,p,q_test, train_flag = False)
+    _, _, _, _, test_latents, _,_ = MLA_model(spike_train, spike_test,label_train, label_test, p,q_test, train_flag = False)
 test_latents = np.array(test_latents)
 np.save("./npy_files/test_latents_conditional.npy" if conditional else "./npy_files/test_latents.npy",test_latents)
     
